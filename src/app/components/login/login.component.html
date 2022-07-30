@@ -1,17 +1,56 @@
-
-<form>
-    <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+<div style="height: 100vh; width: 50%" class="container">
+  <div class="h-100 d-flex align-items-center justify-content-center">
+    <div class=" w-100">
+      <h2 class="text-center">Iniciar Sesión</h2>
+      <form [formGroup]="form" (ngSubmit)="onEnviar($event)">
+        <div class="mb-3">
+          <label for="inputEmail" class="form-label">Email</label>
+          <input
+            [ngClass]="{
+              'is-invalid': Username?.invalid && Username?.touched,
+              'is-valid': Username?.valid && Username?.touched
+            }"
+            type="email"
+            class="form-control"
+            id="inputEmail"
+            aria-describedby="emailHelp"
+            formControlName="username"
+          />
+        </div>
+        <div *ngIf="Username?.errors && Username?.touched">
+          <p *ngIf="Username?.hasError('required')" class="text-danger">
+            El campo email es requerido
+          </p>
+          <p *ngIf="Username?.hasError('email')" class="text-danger">
+            El formato del email debe ser válido
+          </p>
+        </div>
+        <div class="mb-3">
+          <label for="inputPassword" class="form-label">Contraseña</label>
+          <input
+            [ngClass]="{
+              'is-invalid': Password?.errors && Password?.touched,
+              'is-valid': Password?.valid && Password?.touched
+            }"
+            type="password"
+            class="form-control"
+            id="inputPassword"
+            formControlName="password"
+          />
+          <div *ngIf="Password?.errors && Password?.touched">
+            <p *ngIf="Password?.hasError('required')" class="text-danger">
+              El campo contraseña es requerido
+            </p>
+            <p *ngIf="Password?.errors?.['minlength']" class="text-danger">
+              La contraseña debe tener al menos 6 caracteres
+            </p>
+            <p *ngIf="Password?.errors?.['maxlength']" class="text-danger">
+              La contraseña debe tener como máximo 20 caracteres
+            </p>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary w-100">Enviar</button>
+      </form>
     </div>
-    <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1">
-    </div>
-    <div class="mb-3 form-check">
-      <input type="checkbox" class="form-check-input" id="exampleCheck1">
-      <label class="form-check-label" for="exampleCheck1">Check me out</label>
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-  </form>
+  </div>
+</div>

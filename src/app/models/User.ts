@@ -1,5 +1,6 @@
-export interface User {
-    id?:number,
-    email:string,
-    pass?:string
+export class User {
+    id?:number;
+    username?:string;
+    password?:string;
+    roles?:string[];
 }
