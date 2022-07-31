@@ -6,7 +6,7 @@ import { Experience } from '../models/Experience';
   providedIn: 'root'
 })
 export class JobExpService {
-  url: string = "http://localhost:9000/api/job-experience";
+  url: string = "https://ap-portfolio-web.herokuapp.com/api/job-experience";
   constructor(private http: HttpClient) { }
 
   getJobExpById(id: number) {

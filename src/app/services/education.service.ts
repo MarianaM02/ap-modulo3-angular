@@ -6,7 +6,7 @@ import { Experience } from '../models/Experience';
   providedIn: 'root'
 })
 export class EducationService {
-  url: string = "http://localhost:9000/api/education";
+  url: string = "https://ap-portfolio-web.herokuapp.com/api/education";
   constructor(private http:HttpClient) { }
 
   updateEducation(education: Experience) {

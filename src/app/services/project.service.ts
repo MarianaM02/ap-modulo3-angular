@@ -6,7 +6,7 @@ import { Project } from '../models/Project';
   providedIn: 'root'
 })
 export class ProjectService {
-  url:string = "http://localhost:9000/api/project";
+  url:string = "https://ap-portfolio-web.herokuapp.com/api/project";
   constructor(private http:HttpClient) { }
 
   updateProject(project:Project){

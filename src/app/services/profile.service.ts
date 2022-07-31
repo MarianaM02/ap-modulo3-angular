@@ -7,7 +7,7 @@ import { Profile } from '../models/Profile';
   providedIn: 'root'
 })
 export class ProfileService {
-  url:string = "http://localhost:9000/api/profile";
+  url:string = "https://ap-portfolio-web.herokuapp.com/api/profile";
   constructor(private http:HttpClient) { }
 
   getProfiles(){

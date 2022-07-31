@@ -8,7 +8,7 @@ import { Skill } from '../models/Skill';
 export class SkillService {
 
   // TODO hard y soft skills
-  url:string = "http://localhost:9000/api/skill";
+  url:string = "https://ap-portfolio-web.herokuapp.com/api/skill";
   constructor(private http:HttpClient) { }
 
   getSkills(){

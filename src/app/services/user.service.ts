@@ -6,7 +6,7 @@ import { User } from '../models/User';
   providedIn: 'root'
 })
 export class UserService {
-  url:string = "http://localhost:9000/api/user";
+  url:string = "https://ap-portfolio-web.herokuapp.com/api/user";
   constructor(private http:HttpClient) { }
 
   getUsers(){

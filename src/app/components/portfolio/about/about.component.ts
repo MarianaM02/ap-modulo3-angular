@@ -7,7 +7,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class AboutComponent implements OnInit {
   @Input() about:string = "";
-  
+
   constructor() { }
 
   ngOnInit(): void {

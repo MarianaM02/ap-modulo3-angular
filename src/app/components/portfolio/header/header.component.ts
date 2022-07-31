@@ -1,7 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
-import { Profile } from 'src/app/models/Profile';
-import { EventService } from 'src/app/services/event.service';
+import { Component, OnInit, Output } from '@angular/core';
 import { ProfileService } from 'src/app/services/profile.service';
 
 @Component({
@@ -11,7 +8,11 @@ import { ProfileService } from 'src/app/services/profile.service';
 })
 export class HeaderComponent implements OnInit {
   profile?:any;
-  constructor(private profileService:ProfileService, private eventService:EventService) { 
+  @Output() contacto = {
+    "githubLink": "",
+  "linkedinLink": ""
+  }
+  constructor(private profileService:ProfileService) { 
   }
 
   ngOnInit(): void {
@@ -19,6 +20,8 @@ export class HeaderComponent implements OnInit {
     if (currentUser) {
       this.profileService.getProfileByUserId(parseInt(currentUser.id)).subscribe(data => {
         this.profile = data;
+        this.contacto.githubLink = this.profile.githubUrl;
+        this.contacto.linkedinLink = this.profile.linkedinUrl;
       }
       );
     }
