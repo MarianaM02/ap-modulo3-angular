@@ -1,4 +1,8 @@
 <div class="shadow-sm p-3 my-4 bg-body rounded">
   <h2>Educación</h2>
-  <p>education list</p>
+  <div>
+    <app-experience-item
+    *ngFor="let e of educationExperiences"
+      [experience]="e"></app-experience-item>
+  </div>
 </div>

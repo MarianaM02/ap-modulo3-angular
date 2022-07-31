@@ -1,7 +1,16 @@
 <div class="shadow-sm p-3 my-4 mx-0 mt-5 bg-body rounded-bottom row">
-  <div class="col-2"><img src="..." class="img-thumbnail" alt="..."></div>
-  <div class="col">
-    <h1>Nombre Apellido</h1>
-    <h4>Web Developer</h4>
+  <div class="col-lg-auto"><img [src] = "profile.pictureUrl || 'https://chooksandchips.com/wp-content/uploads/2017/05/default2-1-1.jpg'"
+    class="img-thumbnail" style="height: 150px; width: 150px;" alt="Profile Pic"></div>
+  <div class="col-lg-auto">
+    <div class="d-flex justify-content-between">
+      <h1>{{ profile.name }} {{ profile.lastName }}</h1>
+      <div class="d-flex m-2">
+        <i class="fas fa-edit mx-1"></i>
+        <i class="fa fa-trash mx-1"></i>
+      </div>
+    </div>
+    <h5>{{ profile.title }}</h5> 
+    <h6>{{ profile.location }}</h6> 
   </div>
 </div>
+<app-about [about] = "profile.about"></app-about>

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProjectService } from 'src/app/services/project.service';
 
 @Component({
   selector: 'app-projects',
@@ -6,10 +7,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./projects.component.css']
 })
 export class ProjectsComponent implements OnInit {
-
-  constructor() { }
+  projects: any = []
+  constructor(private projectService: ProjectService) { }
 
   ngOnInit(): void {
+    var currentUser = JSON.parse(sessionStorage.getItem("currentUser") + "");
+    if (currentUser) {
+      this.projectService.getProjectByUserId(parseInt(currentUser.id)).subscribe(data => {
+        this.projects = data;
+      }
+      );
+
+    }
   }
 
 }

@@ -1,14 +1,23 @@
-<div class="col">
+<div class="mx-2 mb-4">
   <div class="card" style="width: 18rem">
-    <a href="#" class="btn btn-primary">
-      <img src="..." class="card-img-top" alt="..." />
+    <a [href]="project.projectUrl" target="_blank" rel="noopener noreferrer">
+      <img
+        [src]="
+          project.pictureUrl ||
+          'https://d1nhio0ox7pgb.cloudfront.net/_img/o_collection_png/green_dark_grey/256x256/plain/briefcase.png'
+        "
+        class="card-img-top"
+        alt="Proyect Image"
+      />
     </a>
-    <div class="card-body">
-      <h5 class="card-title">Proyect title</h5>
-      <p class="card-text">
-        Some quick example text to build on the card title and make up the bulk of
-        the card's content.
-      </p>
+      <div class="card-body">
+        <h4 class="card-title">{{ project.projectTitle }}</h4>
+        <p class="card-text">{{ project.description }}</p>
+      </div>
+      <div class="d-flex m-2">
+        <i class="fas fa-edit mx-1"></i>
+        <i class="fa fa-trash mx-1"></i>
+      </div>
     </div>
-  </div>
 </div>
+

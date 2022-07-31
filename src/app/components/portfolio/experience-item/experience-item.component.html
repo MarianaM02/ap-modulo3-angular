@@ -1,1 +1,22 @@
-<p>experience-item works!</p>
+<div class="d-flex justify-content-between">
+  <div class="d-flex justify-content">
+    <img
+      [src]="
+        experience.pictureUrl ||
+        'https://www.svgimages.com/svg-image/s7/work-icon-black-256x256.png'
+      "
+      alt=""
+      style="width: 60px; height: auto"
+      class="align-self-start"
+    />
+    <div class="mx-3">
+      <h4>{{ experience.title }}</h4>
+      <p class="my-0">{{ experience.place }}</p>
+      <p class="text-secondary">{{ experience.description }}</p>
+    </div>
+  </div>
+  <div class="d-flex">
+    <i class="fas fa-edit mx-1"></i>
+    <i class="fa fa-trash mx-1"></i>
+  </div>
+</div>

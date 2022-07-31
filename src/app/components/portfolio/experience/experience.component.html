@@ -1,4 +1,9 @@
 <div class="shadow-sm p-3 my-4 bg-body rounded">
-    <h2>Experiencia laboral</h2>
-    <p>job experience list</p>
+  <h2>Experiencia laboral</h2>
+  <div>
+    <app-experience-item
+    *ngFor="let j of jobExperiences"
+      [experience]="j"
+    ></app-experience-item>
+  </div>
 </div>

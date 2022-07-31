@@ -31,8 +31,8 @@ export class LoginComponent implements OnInit {
   onEnviar(event:Event){
     event.preventDefault();
     let usuario:User = new User();
-    usuario.username = this.form.value.username;
-    usuario.password = this.form.value.password;
+    usuario.email = this.form.value.username;
+    usuario.pass = this.form.value.password;
 
     if (this.form.valid) {
       this.authenticationService.Login(usuario).subscribe(

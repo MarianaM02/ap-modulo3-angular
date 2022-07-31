@@ -18,7 +18,8 @@ import { ProjectItemComponent } from './components/portfolio/project-item/projec
 import { SkillItemComponent } from './components/portfolio/skill-item/skill-item.component';
 import { ExperienceItemComponent } from './components/portfolio/experience-item/experience-item.component';
 import { ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { InterceptorService } from './services/interceptor.service';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,9 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: InterceptorService, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
