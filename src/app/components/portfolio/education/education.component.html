@@ -1,5 +1,8 @@
 <div class="shadow-sm p-3 my-4 bg-body rounded">
-  <h2>Educación</h2>
+  <div class="d-flex justify-content-between mb-3">
+    <h2>Educación</h2>  
+    <app-icon-btn [type]="'add'"></app-icon-btn>
+  </div>
   <div>
     <app-experience-item
     *ngFor="let e of educationExperiences"

@@ -1,0 +1,6 @@
+<div class="icon-btn" (click)="onClick()">
+  <i *ngIf="type == 'edit'" class="fas fa-edit mx-1 btnEdit"></i>
+  <i *ngIf="type == 'delete'" class="fa fa-trash mx-1 btnDelete"></i>
+  <i *ngIf="type == 'add'" class="fa fa-plus align-self-center btnAdd"></i>
+  <div *ngIf="type == 'submit'" class="btnSubmit">Enviar</div>
+</div>

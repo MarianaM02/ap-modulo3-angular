@@ -1,0 +1,28 @@
+
+.icon-btn:hover {
+    cursor: pointer;
+    display: block;
+}
+
+.btnEdit:hover {
+    color: #0d6efd;
+}
+.btnAdd:hover {
+    color: #198754;
+}
+.btnDelete:hover {
+    color: #dc3545;
+}
+
+.btnSubmit {
+    background-color: #0d6efd;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    font-size: 14px;
+}
+.btnSubmit:hover {
+    background-color: #198754;
+    color: #fff;
+}

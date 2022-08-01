@@ -1,5 +1,5 @@
 <div class="mx-2 mb-4">
-  <div class="card" style="width: 18rem">
+  <div class="card" style="width: 15rem; height: 100%">
     <a [href]="project.projectUrl" target="_blank" rel="noopener noreferrer">
       <img
         [src]="
@@ -10,14 +10,15 @@
         alt="Proyect Image"
       />
     </a>
-      <div class="card-body">
+    <div class="card-body" >
+      <div>
         <h4 class="card-title">{{ project.projectTitle }}</h4>
         <p class="card-text">{{ project.description }}</p>
       </div>
-      <div class="d-flex m-2">
-        <i class="fas fa-edit mx-1"></i>
-        <i class="fa fa-trash mx-1"></i>
+      <div class="d-flex m-2 justify-content-center">
+        <app-icon-btn [type]="'edit'"></app-icon-btn>
+        <app-icon-btn [type]="'delete'"></app-icon-btn>
       </div>
     </div>
+  </div>
 </div>
-

@@ -1,6 +1,9 @@
 <div class="shadow-sm p-2 my-4 mx-0 mb-5 bg-body rounded row">
-  <h2>Proyectos</h2>
-  <div class="d-flex flex-wrap justify-content-center align-items-sm-stretch">
+  <div class="d-flex justify-content-between mb-3">
+    <h2>Proyectos</h2>
+    <app-icon-btn [type]="'add'"></app-icon-btn>
+  </div>
+  <div class="d-flex flex-wrap justify-content-center">
     <app-project-item
       *ngFor="let p of projects"
       [project]="p"

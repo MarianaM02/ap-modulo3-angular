@@ -10,3 +10,13 @@ a {
         margin-right: 2vw ;
     }
 }
+
+.btnEdit:hover {
+    color: #0d6efd;
+}
+.btnAdd:hover {
+    color: #198754;
+}
+.btnDelete:hover {
+    color: #dc3545;
+}

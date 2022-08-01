@@ -20,6 +20,7 @@ import { ExperienceItemComponent } from './components/portfolio/experience-item/
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { InterceptorService } from './services/interceptor.service';
+import { IconBtnComponent } from './components/icon-btn/icon-btn.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +39,7 @@ import { InterceptorService } from './services/interceptor.service';
     ProjectItemComponent,
     SkillItemComponent,
     ExperienceItemComponent,
+    IconBtnComponent,
   ],
   imports: [
     BrowserModule,
